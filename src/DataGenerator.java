@@ -33,7 +33,7 @@ public static ArrayList<InventoryOperation> generateOperations(int m, int keyUni
         
         ArrayList<InventoryOperation> operations = new ArrayList<>(m);
         
-        HashSet<Integer> activeKeys = new HashSet<>(); // Creo que habia una mejor forma de hacer esto sin HashSet, creo que no los dijo el profe, no recuerdo bien asi que ricky confio en ti que lo tienes apuntado en algun lugar.
+        HashSet<Integer> condfio = new HashSet<>(); // Creo que habia una mejor forma de hacer esto sin HashSet, creo que no los dijo el profe, no recuerdo bien asi que ricky confio en ti que lo tienes apuntado en algun lugar.
         
         for (int i = 0; i < m; i++) {
             
@@ -49,9 +49,9 @@ public static ArrayList<InventoryOperation> generateOperations(int m, int keyUni
                 type = OperationType.PURCHASE;
                 cantidad = StdRandom.uniformInt(1, 6);
                 
-                if (!activeKeys.contains(key)) {
+                if (!condfio.contains(key)) {
                     item = generateItem(key);
-                    activeKeys.add(key); 
+                    condfio.add(key); 
                 } else {
                     item = null;
                 }
@@ -73,7 +73,7 @@ public static ArrayList<InventoryOperation> generateOperations(int m, int keyUni
                 type = OperationType.DISPOSE;
                 cantidad = 0; 
                 
-                activeKeys.remove(key); 
+                condfio.remove(key); 
             }
             
             operations.add(new InventoryOperation(type, key, cantidad, item));
