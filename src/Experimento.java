@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Experimento {
 
     //kenji carrito yo soy una mochila
-    public static String AlienX(int instancia, String estructuraNombre, InventoryIndex index, ArrayList<InventoryOperation> tipoOperación, int m) {
+    public static String Anakin(int instancia, String estructuraNombre, InventoryIndex index, ArrayList<InventoryOperation> tipoOperación, int m) {
 
         //Se supone que deboes dejar todo en 0 ricky?
         //see pq se supone que es el nventario inicial, entonces no tienes datos. tontito unu
@@ -15,7 +15,7 @@ public class Experimento {
         int lend_yupi = 0, lend_caracolitos = 0;
         int receive_yupi = 0, receive_caracolitos = 0;
 
-        StopwatchCPU timer = new StopwatchCPU();
+        StopwatchCPU relojito = new StopwatchCPU();
 
         for (InventoryOperation op : tipoOperación) {
             OperationType type = op.getType();
@@ -67,7 +67,7 @@ public class Experimento {
             }
         }
 
-        double elapsed_seconds = timer.elapsedTime();
+        double elapsed_seconds = relojito.elapsedTime();
 
         int final_size = index.size();
         int final_height = index.height();
@@ -80,9 +80,9 @@ public class Experimento {
     }
 
 public static void main(String[] args) {
-    int[] Tamaños = { 18, 19};
+    int[] Tamaños = {12,13,14,15,16,17,18, 19};
 
-    System.out.println("Iniciando experimento...");
+    
 
     for (int t : Tamaños) {
         int m = (int) Math.pow(2, t);
@@ -97,22 +97,20 @@ public static void main(String[] args) {
                             "query_successful,query_failed,lend_successful,lend_failed,receive_successful,receive_failed," +
                             "final_size,final_height,elapsed_seconds");
 
-        System.out.println("Procesando tamaño m = " + m + "...");
-
         for (int i = 1; i <= 30; i++) {
             long seed = m + i; 
             int keyUniverse = 4 * m;
 
             ArrayList<InventoryOperation> tipoOperación = DataGenerator.generateOperations(m, keyUniverse, seed);
             BSTInventoryIndex bst = new BSTInventoryIndex();
-            String resultBST = AlienX(i, "BST", bst, tipoOperación, m);
+            String resultBST = Anakin(i, "BST", bst, tipoOperación, m);
             cuchurrumin.println(resultBST);
 
            
             tipoOperación = DataGenerator.generateOperations(m, keyUniverse, seed); 
             
             RedBlackBSTInventoryIndex rbBST = new RedBlackBSTInventoryIndex();
-            String resultRbBST = AlienX(i, "RedBlackBST", rbBST, tipoOperación, m);
+            String resultRbBST = Anakin(i, "RedBlackBST", rbBST, tipoOperación, m);
             cuchurrumin.println(resultRbBST);
             
         }
@@ -124,4 +122,3 @@ public static void main(String[] args) {
 }
 }
 
-//YUPI = BUENO QUE SI LO TENGO | CARACOLITOS = MALO QUE NO LO TENGO

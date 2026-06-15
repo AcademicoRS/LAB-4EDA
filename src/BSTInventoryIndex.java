@@ -39,3 +39,5 @@ public class BSTInventoryIndex implements InventoryIndex {
 
 // Creo que hay q meterle @override, tengo entendido que se tienen que sobreescribir pero no estoy segurin papu.
 //AH Y ESTO SOLO ESTA DEFINIENDO AL BST, YA QUE SOLO ESTA A LA ESPERA DE NUEVAS INSTRUCCIONES. POR ESO NO SE VE COMO LOS DEMAS MI NEGRITO BELLO PECHOCHO 
+//Lo entendimos todo (necesitamos un 6 porfavor :cccc)
+//este es nuestro mayor esfuerzo
