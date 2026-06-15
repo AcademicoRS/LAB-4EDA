@@ -93,7 +93,7 @@ public static void main(String[] args) {
         // Configuramos para que Excel entienda el separador inmediatamente
         cuchurrumin.println("sep=,"); 
         
-        cuchurrumin.println("instancia;estructura,m,purchase_total,query_total,lend_total,receive_total,dispose_total," +
+        cuchurrumin.println("instancia,estructura,m,purchase_total,query_total,lend_total,receive_total,dispose_total," +
                             "query_successful,query_failed,lend_successful,lend_failed,receive_successful,receive_failed," +
                             "final_size,final_height,elapsed_seconds");
 
