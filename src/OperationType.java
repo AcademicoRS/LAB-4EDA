@@ -1,4 +1,12 @@
-public class OperationType {
-  
-    public enum OperationType{PURCHASE ,QUERY ,LEND ,RECEIVE ,DISPOSE }
+public enum OperationType {
+    PURCHASE, 
+    QUERY, 
+    LEND, 
+    RECEIVE, 
+    DISPOSE
 }
+
+//xoro EL PROBLEMA ERA QUE LE TENIAMOS EL PUBLIC CLASS Y EL ENUM. EL JAVA SE CONFUNDE Y QUEDA LA EMBARRÁ. GRACIAS TUTORIAL DE YOUTUBE POR TODO 
+//RICK HAY QUE PONERLE GUENO... TAMO SUPER ATRASAO 
+
+//losé....uwu
